@@ -1,0 +1,8 @@
+@model Tienda.Web.Models.ListaProductosViewModels.ListaProductosViewModel
+
+<div class="row marginTop">
+    @foreach (var producto in Model.Productos)
+    {
+        @Html.Partial("ResumenProductos", producto)
+    }
+</div>

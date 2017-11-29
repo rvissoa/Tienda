@@ -1,0 +1,21 @@
+@model Tienda.Web.Models.Producto
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="@Model.ImagenMiniatura" alt="" />
+        <div class="caption">
+            <h3 class="pull-right">@Model.Precio.ToString("c")</h3>
+            <h3>
+                <a asp-controller="Producto" asp-action="Details" asp-route-productoId="@Model.Id">@Model.Nombre</a>
+            </h3>
+            <p>@Model.DescripcionCorta</p>
+        </div>
+        <div class="addToCart text-right">
+            <p class="button ">
+                <a class="btn btn-success" id="cartButton" asp-controller="CarritoCompra" asp-action="AgregarCarritoCompra" asp-route-productoId="@Model.Id">
+                    Agregar a carrito
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

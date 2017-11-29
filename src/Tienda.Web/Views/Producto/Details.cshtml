@@ -1,0 +1,30 @@
+  @model Tienda.Web.Models.Producto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container marginTop">
+    <div class="row">
+        <div class="card">
+            <div class="text-center view overlay hm-white-slight">
+                <img src="@Model.ImagenUrl" class="img-fluid" alt="">
+                <a href="#">
+                    <div class="mask waves-effect waves-light"></div>
+                </a>
+            </div>
+            <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">@Model.Nombre</h4>
+                <!--Text-->
+                <p class="card-text">@Model.DescripcionLarga.</p>
+                <p class="btn btn-group pull-right">
+                    <a asp-controller="Producto" asp-action="List" class="btn btn-default">Show all drinks</a>
+                    <a class="btn btn-success" id="cartButton" asp-controller="CarritoCompra" asp-action="AgregarCarritoCompra" asp-route-Id="@Model.Id">
+                        Agregar @Model.Nombre al carrito
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
